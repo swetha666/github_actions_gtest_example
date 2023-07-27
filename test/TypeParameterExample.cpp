@@ -53,7 +53,7 @@ class FakeTempSensor:public ITempSensor
 {
     public:
      public:
-    int getOutSideTemp(){return 0;}
+    int getoutsideTemp(){return 0;}
 };
 TEST(AutoTempRegulatorTestSuite,RegulateTempTest)
 {
