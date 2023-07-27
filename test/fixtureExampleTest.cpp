@@ -34,7 +34,7 @@ C* cptr;
 TestFixtureTestSuite(){
     //Initialization
 }
-TestFixtureTestSuite(){
+~TestFixtureTestSuite(){
     //Releasing the Resources
 }
 void SetUp()
