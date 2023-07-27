@@ -24,7 +24,6 @@ class A
     }
 };
 
-
 class TestFixtureTestSuite:public testing::Test
 {
 protected:
