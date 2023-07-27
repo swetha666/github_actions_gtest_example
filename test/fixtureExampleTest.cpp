@@ -4,7 +4,7 @@ class B
 {
     C* ptr;
     public:
-    B(C* addressOfobject): ptr{addresOfobject}
+    B(C* addressOfobject): ptr{addressOfobject}
     {
 
     }
@@ -14,7 +14,7 @@ class A
 {
     B* ptr;
     public:
-    A(B* addressOfobject): ptr{addresOfobject}
+    A(B* addressOfobject): ptr{addressOfobject}
     {
 
     }
