@@ -28,6 +28,9 @@ class A
 class TestFixtureTestSuite:public testing::Test
 {
 protected:
+A* aptr;
+B* bptr;
+C* cptr;
 TestFixtureTestSuite(){
     //Initialization
 }
