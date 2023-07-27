@@ -30,6 +30,7 @@ protected:
 A* aptr;
 B* bptr;
 C* cptr;
+
 TestFixtureTestSuite(){
     //Initialization
 }
