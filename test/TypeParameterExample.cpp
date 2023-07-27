@@ -38,7 +38,7 @@ ITempSensor* createObject<ModelBTempSenso>() { return new ModelATempSensor(); }
 class TempSensorFixture:public testing::Test
 {
     protected:
-    TempSensorFixture():objUnderTest{ createObject<T>()}
+    TempSensorFixture():objUnderTest{ createObject<T>()}{}
     //Arrange
     ITempSensor* objUnderTest;
 }
@@ -49,5 +49,5 @@ TYPED_TEST_SUITE(TempSensorFixture, Implementations);
 
 TYPED_TEST(TempSensorFixture,GetTempTest)
 {
-    ASSERT_EQ(objUnderTest->getOutSideTemp(),23);
+    ASSERT_EQ(this->objUnderTest->getOutSideTemp(),23);
 }
