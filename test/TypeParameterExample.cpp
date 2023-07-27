@@ -49,5 +49,5 @@ TYPED_TEST_SUITE(TempSensorFixture, Implementations);
 
 TYPED_TEST(TempSensorFixture,GetTempTest)
 {
-    ASSERT_EQ(this->objUnderTest->getOutSideTemp(),23);
+    ASSERT_EQ(this->objUnderTest->getoutSideTemp(),23);
 }
