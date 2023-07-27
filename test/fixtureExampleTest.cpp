@@ -53,7 +53,6 @@ void TearDown()
 }
 };
 
-
 TEST_F(TestFixtureTestSuite,OperationTrueTest)
 {
     //Act and Assert
