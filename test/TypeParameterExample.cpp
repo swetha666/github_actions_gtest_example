@@ -23,7 +23,7 @@ class AutoTempRegulator
     AutoTempRegulator(ITempSensor* address):tempSensorPtr{address}{}
     void regulateTemp()
     {
-        this ->tempSensorPtr->getOutSideTemp();
+        this ->tempSensorPtr->getoutSideTemp();
     }
 };
 
