@@ -40,9 +40,9 @@ TestFixtureTestSuite(){
 void SetUp()
 {
     //Arrange
-    this ->cPtr= new C();
-    this ->bPtr= new B(cPtr);
-    this ->aPtr= new A(bPtr);
+    this ->cptr= new C();
+    this ->bptr= new B(cptr);
+    this ->aptr= new A(bptr);
 }
 void TearDown()
 {
