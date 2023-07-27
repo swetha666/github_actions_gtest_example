@@ -30,7 +30,7 @@ TEST(TestFixtureTestSuite,OperationTrueTest)
     B bobj(&cobj);
     A aobj(&bobj);
     //Act and Assert
-    ASSERT_TRUE(obj.operation());
+    ASSERT_TRUE(aobj.operation());
 }
 TEST(TestFixtureTestSuite,OperationFalseTest)
 {
@@ -39,5 +39,5 @@ TEST(TestFixtureTestSuite,OperationFalseTest)
     B bobj(&cobj);
     A aobj(&bobj);
     //Act and Assert
-    ASSERT_FALSE(obj.operation());
+    ASSERT_FALSE(aobj.operation());
 }
