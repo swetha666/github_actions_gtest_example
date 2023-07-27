@@ -1,27 +1,31 @@
+
 #include "gtest/gtest.h"
 using testing::Types;
-
-class ITempSensor{
+class ITempSensor
+{
     public:
-    virtual int getOutSideTemp()=0;
+    virtual int getoutsideTemp()=0;
 };
-class ModelATempSensor:public ITempSensor{
+class ModelATempSensor:public ITempSensor
+{
     public:
-    int getOutSideTemp(){ return  23;}
+    int getoutsideTemp(){return 23;}
 };
-class ModelBTempSensor:public ITempSensor{
+class ModelBTempSensor:public ITempSensor
+{
     public:
-    int getOutSideTemp(){ return  23;}
+    int getoutsideTemp(){return 23;}
 };
-class AutoTempRegulator{
+class AutoTempRegulator
+{
     ITempSensor* tempSensorPtr;
     public:
-    AutoTempRegulator(ITempSensor* address):tempSensorPtr{address} {}
-    void  regulateTemp(){
-         this->tempSensorPtr->getOutSideTemp();
-    }  
+    AutoTempRegulator(ITempSensor* address):tempSensorPtr{address}{}
+    void regulateTemp()
+    {
+        this ->tempSensorPtr->getoutsideTemp();
+    }
 };
-
 template <typename T>
 ITempSensor* createObject();
 template <>
@@ -30,19 +34,17 @@ template <>
 ITempSensor* createObject<ModelBTempSensor>() { return new ModelBTempSensor(); }
 
 template <typename T>
-class TempSensorFixture:public testing::Test{
+
+class TempSensorFixture:public testing::Test
+{
     protected:
     TempSensorFixture():objUnderTest{ createObject<T>()}{}
-    //arrange
+    //Arrange
     ITempSensor* objUnderTest;
-
 };
-
 typedef Types<ModelATempSensor,ModelBTempSensor> Implementations;
-
 TYPED_TEST_SUITE(TempSensorFixture, Implementations);
-
-TYPED_TEST(TempSensorFixture,GetTempTest){
-    ASSERT_EQ(this->objUnderTest->getOutSideTemp(),23);
+TYPED_TEST(TempSensorFixture,GetTempTest)
+{
+    ASSERT_EQ(this->objUnderTest->getoutsideTemp(),23);
 }
-
