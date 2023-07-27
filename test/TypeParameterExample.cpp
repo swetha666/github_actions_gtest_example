@@ -23,7 +23,7 @@ class AutoTempRegulator
     AutoTempRegulator(ITempSensor* address):tempSensorPtr{address}{}
     void regulateTemp()
     {
-        this ->tempSensorPtr->getoutSideTemp();
+        this ->tempSensorPtr->getoutsideTemp();
     }
 };
 
@@ -33,7 +33,7 @@ ITempSensor* createObject();
 template <>
 ITempSensor* createObject<ModelATempSensor>() { return new ModelATempSensor(); }
 template <>
-ITempSensor* createObject<ModelBTempSenso>() { return new ModelATempSensor(); }
+ITempSensor* createObject<ModelBTempSensor>() { return new ModelATempSensor(); }
 
 class TempSensorFixture:public testing::Test
 {
@@ -49,5 +49,5 @@ TYPED_TEST_SUITE(TempSensorFixture, Implementations);
 
 TYPED_TEST(TempSensorFixture,GetTempTest)
 {
-    ASSERT_EQ(this->objUnderTest->getoutSideTemp(),23);
+    ASSERT_EQ(this->objUnderTest->getoutsideTemp(),23);
 }
