@@ -9,21 +9,21 @@ class ITempSensor
 class ModelATempSensor:public ITempSensor
 {
     public:
-    int getoutsideTemp(){return 23};
+    int getoutsideTemp(){return 23;}
 };
 class ModelBTempSensor:public ITempSensor
 {
     public:
-    int getoutsideTemp(){return 23};
+    int getoutsideTemp(){return 23;}
 };
 class AutoTempRegulator
 {
     ITempSensor* tempSensorPtr;
     public:
     AutoTempRegulator(ITempSensor* address):tempSensorPtr{address}{}
-    int regulateTemp()
+    void regulateTemp()
     {
-        return this ->tempSensorPtr->getOutSideTemp();
+        this ->tempSensorPtr->getOutSideTemp();
     }
 };
 
