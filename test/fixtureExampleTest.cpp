@@ -23,21 +23,40 @@ class A
         return true;
     }
 };
-TEST(TestFixtureTestSuite,OperationTrueTest)
+
+
+class TestFixtureTestSuite:public testing::Test
 {
-    //Arrange
-    C cobj;
-    B bobj(&cobj);
-    A aobj(&bobj);
-    //Act and Assert
-    ASSERT_TRUE(aobj.operation());
+protected:
+TestFixtureTestSuite(){
+    //Initialization
 }
-TEST(TestFixtureTestSuite,OperationFalseTest)
+TestFixtureTestSuite(){
+    //Releasing the Resources
+}
+void SetUp()
 {
     //Arrange
-    C cobj;
-    B bobj(&cobj);
-    A aobj(&bobj);
+    this ->cPtr= new C();
+    this ->bPtr= new B(cPtr);
+    this ->aPtr= new A(bPtr);
+}
+void TearDown()
+{
+    //delete resources
+    delete cptr;
+    delete bptr;
+    delete aptr;
+}
+};
+
+TEST_F(TestFixtureTestSuite,OperationTrueTest)
+{
     //Act and Assert
-    ASSERT_FALSE(aobj.operation());
+    ASSERT_TRUE(aptr->operation());
+}
+TEST_F(TestFixtureTestSuite,OperationFalseTest)
+{
+    //Act and Assert
+    ASSERT_FALSE(aptr->operation());
 }
